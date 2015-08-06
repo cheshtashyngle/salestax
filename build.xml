@@ -8,6 +8,7 @@
 
     <path id="classpath">
         <fileset dir="${lib.dir}" includes="junit-4.11.jar"/>
+        <fileset dir="${lib.dir}" includes="mockito-all-1.9.5.jar"/>
     </path>
 
     <target name="compile">
@@ -23,6 +24,7 @@
             <formatter type="plain" usefile="false"/>
             <test name = "com.salestax.ConsoleTest" />
             <test name = "com.salestax.ParserTest" />
+            <test name = "com.salestax.SalesTaxApplicationTest" />
         </junit>
     </target>
 

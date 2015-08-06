@@ -17,7 +17,7 @@ public class Main {
         ArrayList<String> medicines = new ArrayList<String>();
         medicines.add("packet of headache pills");
         Parser parser = new Parser(food, books, medicines);
-        SalesTaxApplication salesTaxApplication = new SalesTaxApplication(console);
+        SalesTaxApplication salesTaxApplication = new SalesTaxApplication(console, parser);
         salesTaxApplication.start();
     }
 }
