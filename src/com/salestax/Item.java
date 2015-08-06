@@ -15,4 +15,16 @@ public class Item {
         this.category = category;
         this.imported = imported;
     }
+
+    public double calculateTax() {
+        return calculateSalesTax() + calculateImportTax();
+    }
+
+    private double calculateImportTax() {
+        return 0;
+    }
+
+    private double calculateSalesTax() {
+        return 0;
+    }
 }

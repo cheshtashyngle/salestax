@@ -25,6 +25,7 @@
             <test name = "com.salestax.ConsoleTest" />
             <test name = "com.salestax.ParserTest" />
             <test name = "com.salestax.SalesTaxApplicationTest" />
+            <test name = "com.salestax.ItemTest" />
         </junit>
     </target>
 
