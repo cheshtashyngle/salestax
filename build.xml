@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<project name="salestax" default="runjunit" basedir=".">
+
+    <property name="lib.dir" value="lib"/>
+
+    <mkdir dir="build" />
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="junit-4.11.jar"/>
+    </path>
+
+    <target name="compile">
+        <javac srcdir="src;test" includeantruntime="false" destdir="build" classpathref="classpath"/>
+    </target>
+
+    <target name="runjunit" depends="compile">
+        <junit haltonfailure="true" printsummary="true" showoutput="yes">
+            <classpath>
+                <pathelement location="build"/>
+                <path refid="classpath"/>
+            </classpath>
+            <formatter type="plain" usefile="false"/>
+            <test name = "com.salestax.ConsoleTest" />
+        </junit>
+    </target>
+
+    <target name="createjar" depends="runjunit">
+        <jar destfile="lib/app.jar"
+             basedir="build"
+             excludes="**/Test.class"/>
+    </target>
+
+    <target name="run" depends="createjar">
+        <java classname="com.salestax.Main">
+            <arg value="-h"/>
+            <classpath>
+                <pathelement location="lib/app.jar"/>
+                <pathelement path="${java.class.path}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
