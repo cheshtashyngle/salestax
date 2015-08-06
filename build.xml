@@ -22,6 +22,7 @@
             </classpath>
             <formatter type="plain" usefile="false"/>
             <test name = "com.salestax.ConsoleTest" />
+            <test name = "com.salestax.ParserTest" />
         </junit>
     </target>
 

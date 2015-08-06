@@ -1,12 +1,16 @@
 package com.salestax;
 
+import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class Main {
+import static org.junit.Assert.assertEquals;
 
-    public static void main(String[] args) {
-        Console console = new Console();
+public class ParserTest {
+
+    @Test
+    public void shouldParse1ChocolateBarAt10() {
+        String input = "1 chocolate bar at 0.85";
         ArrayList<String> food = new ArrayList<String>();
         food.add("chocolate bar");
         food.add("box of imported chocolates");
@@ -17,7 +21,7 @@ public class Main {
         ArrayList<String> medicines = new ArrayList<String>();
         medicines.add("packet of headache pills");
         Parser parser = new Parser(food, books, medicines);
-        SalesTaxApplication salesTaxApplication = new SalesTaxApplication(console);
-        salesTaxApplication.start();
+
+        assertEquals(Item.class, parser.parseCommand(input).getClass());
     }
 }
